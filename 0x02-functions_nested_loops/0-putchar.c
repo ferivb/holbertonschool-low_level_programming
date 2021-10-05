@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *answer = "_putchar";
+	char *answer = "_putchar\n";
 	int a = 0;
 
 	while (a < 9)
@@ -16,6 +16,5 @@ int main(void)
 		_putchar(answer[a]);
 		a++;
 	}
-	_putchar(10);
 	return (0);
 }
