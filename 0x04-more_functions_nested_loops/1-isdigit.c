@@ -11,13 +11,13 @@ int _isdigit(int c)
 {
 	int result;
 
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+	if (c >= 48 && c <= 57)
 	{
-		result = 0;
+		result = 1;
 	}
 	else
 	{
-		result = 1;
+		result = 0;
 	}
 	return (result);
 }
