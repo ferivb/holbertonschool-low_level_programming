@@ -7,21 +7,25 @@
   */
 void print_triangle(int size)
 {
-	int nl, ht, s;
+	int nl, s, ht, a, b;
 
 	if (size > 0)
 	{
+		a = size -1;
+		b = size - (size - 1);
 		for (nl = 0; nl < size; nl++)
 		{
-			for (ht = 0; ht < nl; ht++)
+			for (s = 0; s < a; s++)
 			{
-				for (s = 0; s < ht; s++)
-				{
-					_putchar(35);
-				}
-				_putchar(10);
+				_putchar(32);
 			}
-			_putchar(32);
+			for (ht = 0; ht < b; ht++)
+			{
+				_putchar(35);
+			}
+			_putchar(10);
+			a = a - 1;
+			b = b + 1;
 		}
 	}
 	else
