@@ -12,11 +12,11 @@ void print_diagsums(int *a, int size)
 	int suma = 0;
 	int sumb = 0;
 
-	for (i = 0, j = 0; j != size; i+=(size + 1), j++)
+	for (i = 0, j = 0; j != size; i += (size + 1), j++)
 	{
 		suma += a[i];
 	}
-	for (i = (size -1), j = 0; j != size; i+=(size - 1), j++)
+	for (i = (size - 1), j = 0; j != size; i += (size - 1), j++)
 	{
 		sumb += a[i];
 	}
