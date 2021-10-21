@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
-  * is_prime_number - prime number finder
   * aux - aux function
   * @n: number to analize
   * @i: counter
@@ -19,6 +18,13 @@ int aux(int n, int i)
 	}
 	return (aux(n, i + 1));
 }
+
+/**
+  * is_prime_number - checks if n is prime
+  * @n: number to check
+  * Return: 1 if prime 0 if not
+  */
+
 
 int is_prime_number(int n)
 {
