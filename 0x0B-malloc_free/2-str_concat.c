@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-  * _strlen - lenght of a string + '\0'
+  * _strlen - lenght of a string
   * @s: string
-  * Return: lenght of a string +1 for the '\0'
+  * Return: lenght of a string
   */
 int _strlen(char *s)
 {
@@ -17,7 +17,7 @@ int _strlen(char *s)
 	{
 		continue;
 	}
-	return (i + 1);
+	return (i);
 }
 
 /**
@@ -36,6 +36,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		for (; s1[i] != '\0'; i++)
 		{
+			if (ns == NULL)
+			{
+				return (NULL);
+			}
 			ns[i] = s1[i];
 		}
 	}
@@ -43,13 +47,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		for (; s2[j] != '\0'; j++)
 		{
+			if (ns == NULL)
+			{
+				return (NULL);
+			}
 			ns[i] = s2[j];
 			i++;
 		}
-	}
-	if (ns == NULL)
-	{
-		return (NULL);
 	}
 	ns[i] = '\0';
 	return (ns);
