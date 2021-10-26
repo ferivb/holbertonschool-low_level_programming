@@ -11,7 +11,7 @@ int _strlen(char *s)
 
 	if (s == NULL)
 	{
-		return(0);
+		return (0);
 	}
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 	char *ns = NULL;
 	int i = 0, j = 0;
 
-	ns = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2)));
+	ns = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
 	if (s1 != NULL)
 	{
 		for (; s1[i] != '\0'; i++)
