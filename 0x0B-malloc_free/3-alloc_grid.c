@@ -14,10 +14,10 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	gridmem = malloc(sizeof(int) * height);
+	gridmem = malloc(sizeof(int) * height + 1);
 	for (i = 0; i <= height; i++)
 	{
-		gridmem[i] = malloc(sizeof(int) * width);
+		gridmem[i] = malloc(sizeof(int) * width + 1);
 		if (gridmem == NULL)
 		{
 			return (NULL);
