@@ -2,7 +2,8 @@
 
 /**
   * malloc_checked - reserves space in memory
-  * @mem: pointer to return
+  * @b: memory to allocate
+  * Return: pointer to the allocated memory
   */
 void *malloc_checked(unsigned int b)
 {
