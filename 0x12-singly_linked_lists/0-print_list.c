@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
-  * print_list: Prints contents of a singly LL
+  * print_list - Prints contents of a singly LL
   * @h: Head of the list
-  * @Return: counter dor printed nodes
+  * Return: counter dor printed nodes
   */
 size_t print_list(const list_t *h)
 {
