@@ -1,0 +1,33 @@
+#include "lists.h"
+
+/**
+  *
+  */
+unsigned int _slen(const char *str)
+{
+	unsigned int count = 0;
+
+	for (; str[count] != '\0'; count++)
+	{
+		continue;
+	}
+	return (count);
+}
+
+/**
+  *
+  */
+list_t *add_node(list_t **head, const char *str)
+{
+	list_t *new;
+
+	*new = malloc(sizeof(list_t));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	new->str = strdup(str);
+	new->len = _slen(str);
+	new->next = *head;
+	return (new);
+}
