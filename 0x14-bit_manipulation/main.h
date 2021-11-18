@@ -15,6 +15,6 @@ int clear_bit(unsigned long int *n, unsigned int index);
 /** Aux prototypes **/
 
 unsigned int _slen(const char *num);
-unsigned int myPow(unsigned int base,unsigned int exp);
+unsigned int myPow(unsigned int base, unsigned int exp);
 
 #endif
