@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-  * free_list - Function that fress a list
+  * free_listint - Function that fress a list
   * @head: Main node
   * Return: Head
   */
