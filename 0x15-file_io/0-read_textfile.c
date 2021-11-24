@@ -20,6 +20,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	sizrd = read(fd, hold, letters);
 	sizwr = write(STDOUT_FILENO, hold, sizrd);
+	if (fd == '\0' || sizrd == -1 || sizwr == -1)
+	{
+		free(hold);
+		fd = 0;
+		return (0);
+	}
 	free(hold);
 	close(fd);
 	fd = 0;
