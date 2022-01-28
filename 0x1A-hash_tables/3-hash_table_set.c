@@ -12,7 +12,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
-	hash_node_t /* *collision = NULL,*/ *new = NULL;
+	hash_node_t *collision = NULL, *new = NULL;
 
 	/* Generates the hash(index) for the key */
 	index = key_index((const unsigned char *)key, ht->size);
@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 	/* Collission handling */
-	/* else
+	else
 	{
 		collision = malloc(sizeof(hash_node_t));
 		if (collision == NULL)
@@ -48,6 +48,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new->next = NULL;
 		ht->array[index] = new;
 		return (1);
-	} */
+	}
 	return (0);
 }
