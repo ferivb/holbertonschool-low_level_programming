@@ -12,8 +12,9 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
-	hash_node_t *collision = NULL, *new = NULL;
+	hash_node_t /* *collision = NULL,*/ *new = NULL;
 
+	/* Generates the hash(index) for the key */
 	index = key_index((const unsigned char *)key, ht->size);
 
 	new = malloc(sizeof(hash_node_t));
@@ -23,6 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
+	/* If the hash index is empty */
 	if (ht->array[index] == NULL)
 	{
 		new->key = strdup(key);
@@ -31,7 +33,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 		return (1);
 	}
-	else
+	/* Collission handling */
+	/* else
 	{
 		collision = malloc(sizeof(hash_node_t));
 		if (collision == NULL)
@@ -45,6 +48,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new->next = NULL;
 		ht->array[index] = new;
 		return (1);
-	}
+	} */
 	return (0);
 }
