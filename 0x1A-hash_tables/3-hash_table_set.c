@@ -1,8 +1,13 @@
 #include "hash_tables.h"
 
 /**
- * @brief 
- * 
+ * hash_table_set - Sets a key:value pair to the ht
+ *
+ * @ht: hash table
+ * @key: key to set
+ * @value: value to set
+ *
+ * Return: 1 for success, 0 for failure
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -15,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new == NULL)
 	{
 		free(new);
-		return(0);
+		return (0);
 	}
 
 	if (ht->array[index] == NULL)
@@ -32,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (collision == NULL)
 		{
 			free(collision);
-			return(0);
+			return (0);
 		}
 		collision = ht->array[index];
 		new->key = strdup(key);
