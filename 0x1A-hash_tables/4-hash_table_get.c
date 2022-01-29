@@ -6,7 +6,7 @@
  * @ht: hash table you want to look into
  * @key: key you are looking for
  *
- * Return: Returns the value associated with the element, or NULL if key couldn’t be found
+ * Return: Returns the value associated with the key / NULL if no key
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -16,17 +16,17 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (key && key[0] != '\0' && ht && ht->array && ht->size)
 	{
-			index = key_index((const unsigned char *)key, ht->size);
-			node = ht->array[index];
-			while (node)
+		index = key_index((const unsigned char *)key, ht->size);
+		node = ht->array[index];
+		while (node)
+		{
+			if (strcmp(key, node->key) == 0)
 			{
-				if (strcmp(key, node->key) == 0)
-				{
-					value = strdup(node->value);
-					return value;
-				}
-				node = node->next;
+				value = strdup(node->value);
+				return (value);
 			}
+			node = node->next;
+		}
 	}
 	return (NULL);
 }
