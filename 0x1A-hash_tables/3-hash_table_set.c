@@ -60,6 +60,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				if (strcmp(collision->key, key) == 0)
 				{
+					free(collision->value);
 					collision->value = strdup(value);
 					return (1);
 				}
