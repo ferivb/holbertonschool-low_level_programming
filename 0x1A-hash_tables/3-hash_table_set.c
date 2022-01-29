@@ -1,6 +1,29 @@
 #include "hash_tables.h"
 
 /**
+ * new_pair - Creates a new node
+ *
+ * @key: Node's key
+ * @value: Node's value
+ *
+ * Return: The new node
+ */
+hash_node_t *new_pair(const char *key, const char *value)
+{
+	hash_node_t *new = NULL;
+
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+		return (NULL);
+	new->key = strdup(key);
+	new->value = strdup(value);
+	new->next = (NULL);
+
+	return (new);
+}
+
+
+/**
  * hash_table_set - Sets a key:value pair to the ht
  *
  * @ht: hash table
@@ -19,19 +42,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* Generates the hash(index) for the key */
 		index = key_index((const unsigned char *)key, ht->size);
 
-		new = malloc(sizeof(hash_node_t));
-		if (new == NULL)
-		{
-			free(new);
-			return (0);
-		}
-
 		/* If the hash index is empty */
 		if (ht->array[index] == NULL)
 		{
-			new->key = strdup(key);
-			new->value = strdup(value);
-			new->next = NULL;
+			new = new_pair(key, value);
 			ht->array[index] = new;
 			return (1);
 		}
@@ -40,10 +54,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			collision = malloc(sizeof(hash_node_t));
 			if (collision == NULL)
-			{
-				free(collision);
 				return (0);
-			}
 			collision = ht->array[index];
 			while (collision != NULL)
 			{
@@ -55,8 +66,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				collision = collision->next;
 			}
 			collision = ht->array[index];
-			new->value = strdup(value);
-			new->key = strdup(key);
+			new = new_pair(key, value);
 			new->next = collision;
 			ht->array[index] = new;
 			return (1);
