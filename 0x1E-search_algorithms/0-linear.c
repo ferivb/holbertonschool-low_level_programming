@@ -1,8 +1,3 @@
-/*
- * File: 0-linear.c
- * Auth: Brennan D Baraban
- */
-
 #include "search_algos.h"
 
 /**
@@ -12,10 +7,7 @@
  * @size: The number of elements in the array.
  * @value: The value to search for.
  *
- * Return: If the value is not present or the array is NULL, -1.
- *         Otherwise, the first index where the value is located.
- *
- * Description: Prints a value every time it is compared in the array.
+ * Return: the first index where the value is located or NULL
  */
 int linear_search(int *array, size_t size, int value)
 {
